@@ -2,3 +2,17 @@
 body {
     background-color: bisque;
 }
+
+/* nav bar style */
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+} 
+.hamburger_icon {
+    color: burlywood;
+}
