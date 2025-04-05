@@ -2,159 +2,176 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zero Filter</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero Filter</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="./assets/brandLogos/zeroFIlterLogo.png" />
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/brandLogos/zeroFIlterLogo.png" />
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300&display=swap" rel="stylesheet" />
 
-  <!-- AOS Animation -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- AOS Animation -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./style.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="nav_bar">
-    <button class="hamburger_button" onclick="toggleNav()">
-      <i class="fa-solid fa-bars hamburger_icon"></i>
-    </button>
+    <!-- Navigation -->
+    <nav class="nav_bar">
+        <button class="hamburger_button" onclick="toggleNav()">
+            <i class="fa-solid fa-bars hamburger_icon"></i>
+        </button>
 
-    <div class="nav_links_wrapper" id="navLinks">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#who-we-are">Who We Are</a></li>
-        <li class="nav-item"><a class="nav-link" href="#our-vision">Our Vision</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Banner -->
-  <div class="main_banner">
-    <img class="main_banner_logo" src="./assets/brandLogos/zeroFIlterLogo.png" alt="Zero Filter Logo" />
-    <img class="main_banner_bg" src="./assets/utilityImages/mainBannerImage.png" alt="Banner Background" />
-    <div class="main_banner_text">
-      <span>ZERO FILTER</span>
-      <p>
-        At Zero Filter, we believe in showcasing the true essence of every moment—unedited, authentic, and raw
-        beauty. Whether you're looking to capture the magic of a special event, need stunning visuals for your
-        brand, or are planning the perfect wedding, our team is dedicated to providing exceptional service
-        tailored to your needs.
-      </p>
-    </div>
-  </div>
-
-  <!-- Who We Are -->
-  <section id="who-we-are" class="who_are_we_section">
-    <div class="who_are_we_container py-5">
-      <div class="row align-items-center">
-        <!-- Image Side -->
-        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
-          <img src="./assets/utilityImages/camera_vector.png" alt="Decorative" class="camera_vector_image" />
-          <div class="row g-3">
-            <div class="col-12">
-              <img src="./assets/utilityImages/who_we_are_1.png" class="img-fluid rounded-4" alt="Image 1" />
-            </div>
-            <div class="col-6">
-              <img src="./assets/utilityImages/who_we_are_2.png" class="img-fluid rounded-4 equal-height-img" alt="Image 2" />
-            </div>
-            <div class="col-6">
-              <img src="./assets/utilityImages/who_we_are_3.png" class="img-fluid rounded-4 equal-height-img" alt="Image 3" />
-            </div>
-          </div>
+        <div class="nav_links_wrapper" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#who-we-are">Who We Are</a></li>
+                <li class="nav-item"><a class="nav-link" href="#our-vision">Our Vision</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <!-- Text Side -->
-        <div class="col-md-6 d-flex align-items-center justify-content-end">
-          <div class="text-end px-3" data-aos="fade-left">
-            <h2 class="who_heading">WHO ARE WE</h2>
-            <p class="who_text">
-              At Zero Filter, we are passionate about capturing the beauty of life’s most cherished
-              moments through stunning visuals. With a focus on photography, videography, graphic
-              design, branding, wedding photography & videography, and 3D design, we offer an
-              all-in-one creative solution for individuals and businesses alike. Whether you're looking
-              to commemorate a special occasion, promote your brand, or bring your ideas to life in 3D,
-              we are here to turn your vision into a reality.
-              <br /><br />
-              Zero Filter is a creative brand built on the principles of authenticity, professionalism,
-              and artistic innovation. Founded by a passionate team of photographers, videographers,
-              and designers, our mission is to deliver stunning visuals with zero limitations and
-              infinite possibilities. From major events to intimate moments, we believe every story
-              deserves to be told beautifully.
+    <!-- Banner -->
+    <div class="main_banner">
+        <img class="main_banner_logo" src="./assets/brandLogos/zeroFIlterLogo.png" alt="Zero Filter Logo" />
+        <img class="main_banner_bg" src="./assets/utilityImages/mainBannerImage.png" alt="Banner Background" />
+        <div class="main_banner_text">
+            <span>ZERO FILTER</span>
+            <p>
+                At Zero Filter, we believe in showcasing the true essence of every moment—unedited, authentic, and raw
+                beauty. Whether you're looking to capture the magic of a special event, need stunning visuals for your
+                brand, or are planning the perfect wedding, our team is dedicated to providing exceptional service
+                tailored to your needs.
             </p>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Our Vision -->
-  <section id="our-vision" class="py-5 text-center">
-    <div class="container">
-      <h2>Our Vision</h2>
-      <p>Our mission and vision statement.</p>
-    </div>
-  </section>
+    <!-- Who We Are -->
+    <section id="who-we-are" class="who_are_we_section">
+        <div class="who_are_we_container py-5">
+            <div class="row align-items-center">
+                <!-- Image Side -->
+                <img src="./assets/utilityImages/camera_vector.png" alt="Decorative" class="camera_vector_image" />
+                <div class="col-md-6 mb-4 mb-md-0" data-aos="zoom-in-down" data-aos-duration="2000">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <img src="./assets/utilityImages/who_we_are_1.png" class="img-fluid rounded-4"
+                                alt="Image 1" />
+                        </div>
+                        <div class="col-6">
+                            <img src="./assets/utilityImages/who_we_are_2.png"
+                                class="img-fluid rounded-4 equal-height-img" alt="Image 2" />
+                        </div>
+                        <div class="col-6">
+                            <img src="./assets/utilityImages/who_we_are_3.png"
+                                class="img-fluid rounded-4 equal-height-img" alt="Image 3" />
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Services -->
-  <section id="services" class="py-5 text-center bg-light">
-    <div class="container">
-      <h2>Our Services</h2>
-      <p>Details about services offered.</p>
-    </div>
-  </section>
+                <!-- Text Side -->
+                <div class="col-md-6 d-flex align-items-center justify-content-end">
+                    <div class="text-end px-3" data-aos="zoom-in-down" data-aos-duration="2000">
+                        <h2 class="who_heading">WHO ARE WE</h2>
+                        <p class="who_text">
+                            At Zero Filter, we are passionate about capturing the beauty of life’s most cherished
+                            moments through stunning visuals. With a focus on photography, videography, graphic
+                            design, branding, wedding photography & videography, and 3D design, we offer an
+                            all-in-one creative solution for individuals and businesses alike. Whether you're looking
+                            to commemorate a special occasion, promote your brand, or bring your ideas to life in 3D,
+                            we are here to turn your vision into a reality.
+                            <br /><br />
+                            Zero Filter is a creative brand built on the principles of authenticity, professionalism,
+                            and artistic innovation. Founded by a passionate team of photographers, videographers,
+                            and designers, our mission is to deliver stunning visuals with zero limitations and
+                            infinite possibilities. From major events to intimate moments, we believe every story
+                            deserves to be told beautifully.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="py-5 text-center">
-    <div class="container">
-      <h2>Gallery</h2>
-      <p>Collection of images showcasing work.</p>
-    </div>
-  </section>
+    <!-- Our Vision -->
+    <section id="our-vision" class="our-vision-section text-center">
+        <img class= "vector-bg vector-top-left" src="./assets/utilityImages/Ellipse-2.png" alt="">
+        <p class="vision-heading mb-2">Our Vision</p>
 
-  <!-- Why Us -->
-  <section id="why-us" class="py-5 text-center bg-light">
-    <div class="container">
-      <h2>Why Us</h2>
-      <p>Reasons to choose us.</p>
-    </div>
-  </section>
+        <!-- Full-width Image -->
+        <div class="vision-image-wrapper" data-aos="fade-up" data-aos-duration="1000">
+            <img src="./assets/utilityImages/our_vision_image.png" alt="Our Vision" class="vision-image img-fluid">
+        </div>
 
-  <!-- Contact Us -->
-  <section id="contact-us" class="py-5 text-center">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>Ways to reach out.</p>
-    </div>
-  </section>
+        <!-- Vision Text -->
+        <div class="vision-text-wrapper mt-4">
+            <p class="vision-text">
+                At Zero Filter, we believe in delivering unfiltered, authentic visuals that showcase the true
+                essence of every moment. We aim to provide our clients with high-quality, creative services that
+                are tailored to their unique needs and preferences, ensuring that each project we undertake is as
+                special as the moments we capture.
+            </p>
+        </div>
+    </section>
 
-  <!-- JS Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Toggle Menu Script -->
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("show-nav");
-    }
-    AOS.init();
-  </script>
+    <!-- Services -->
+    <section id="services" class="py-5 text-center bg-light">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>Details about services offered.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-5 text-center">
+        <div class="container">
+            <h2>Gallery</h2>
+            <p>Collection of images showcasing work.</p>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-5 text-center bg-light">
+        <div class="container">
+            <h2>Why Us</h2>
+            <p>Reasons to choose us.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact-us" class="py-5 text-center">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ways to reach out.</p>
+        </div>
+    </section>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Toggle Menu Script -->
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("show-nav");
+        }
+        AOS.init();
+    </script>
 </body>
 
 </html>
