@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html {
@@ -476,64 +477,276 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .why_us__container {
+}
+
+.why_us__container {
     max-width: 800px;
     width: 100%;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #555;
-  }
-  
-  /* Headings */
-  .why_us__title {
+}
+
+/* Headings */
+.why_us__title {
     font-size: 28px;
     font-weight: 600;
     color: #666;
     font-family: 'Poppins', sans-serif;
     opacity: 0.74;
     text-align: center;
-  }
-  
-  .why_us__subtitle {
+}
+
+.why_us__subtitle {
     font-size: 14px;
     color: #666;
     font-family: 'Poppins', sans-serif;
     opacity: 0.74;
     margin-bottom: 24px;
-  }
-  
-  /* Cards Layout */
-  .why_us__cards {
+}
+
+/* Cards Layout */
+.why_us__cards {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  /* Individual Card */
-  .why_us__card {
+}
+
+/* Individual Card */
+.why_us__card {
     border: 2px solid #ccc;
     border-radius: 999px;
     padding: 24px 32px;
     height: 100px;
-  }
-  
-  .why_us__card-title {
+}
+
+.why_us__card-title {
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 4px;
     color: #666;
     font-family: 'Poppins', sans-serif;
     opacity: 0.74;
-  }
-  
-  .why_us__card-text {
+}
+
+.why_us__card-text {
     color: #999;
     font-size: 18px;
     opacity: 0.74;
-  }
-  
+}
+
+/* Contact US */
+/* Container */
+.contact_us_section {
+    margin-top: 80px;
+    overflow-x: hidden;
+    max-height: fit-content;
+}
+
+.contact_us_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+/* Left Side */
+.contact_us_left {
+    position: relative;
+    flex: 1;
+    min-width: 350px;
+    height: 600px;
+}
+
+.contact_us_background {
+    position: absolute;
+    top: 54%;
+    left: 76%;
+    width: 136%;
+    height: 140%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact_us_circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+    overflow: hidden;
+    /* important to clip the image inside the circle */
+}
+
+/* Specific Center Circle */
+.contact_us_center {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    top: 336px;
+    left: 498px;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.contact_us_person_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* makes image fill the div without distortion */
+    border-radius: 50%;
+    /* clip the image inside circle */
+    z-index: 0;
+    /* send behind other content */
+}
+
+.contact_us_person_1 {
+    top: 220px;
+    left: 344px;
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+}
+
+.contact_us_person_2 {
+    top: 372px;
+    left: 358px;
+    width: 88px;
+    height: 88px;
+}
+
+.contact_us_person_3 {
+    top: 284px;
+    left: 86px;
+    width: 110px;
+    height: 110px;
+}
+
+.contact_us_person_4 {
+    bottom: 20px;
+    right: 424px;
+    width: 110px;
+    height: 110px;
+}
+
+.contact_us_person_5 {
+    top: 74px;
+    right: 424px;
+    width: 110px;
+    height: 110px;
+}
+
+/* Right Side */
+.contact_us_right {
+    flex: 1;
+    min-width: 350px;
+    text-align: center;
+}
+
+.contact_us_heading {
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.74;
+    margin-bottom: 28px;
+}
+
+/* Form Styling */
+.contact_us_form {
+    margin-bottom: 30px;
+}
+
+.contact_us_form_row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact_us_input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.contact_us_input_group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.contact_us_label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.74;    
+    text-align: left;
+}
+.contact_us_input:focus {
+    border-color: #a18cd1;
+    outline: none;
+}
+
+.contact_us_button {
+    margin-top: 10px;
+    padding: 12px 30px;
+    border: none;
+    background: #555;
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact_us_button:hover {
+    background: #333;
+}
+
+/* Underline */
+.contact_us_underline {
+    width: 60%;
+    margin: 20px auto;
+    height: 2px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+/* Contact Info */
+.contact_us_info {
+    margin-top: 20px;
+}
+
+.contact_us_icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 10px;
+}
+
+.contact_us_icon {
+    width: 40px;
+    height: 40px;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .main_banner_text {
