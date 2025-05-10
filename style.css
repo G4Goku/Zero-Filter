@@ -558,6 +558,7 @@ body {
     flex: 1;
     min-width: 350px;
     height: 600px;
+    margin-bottom: 20px;
 }
 
 .contact_us_background {
@@ -595,7 +596,7 @@ body {
     height: 140px;
     background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     top: 336px;
-    left: 498px;
+    left: 490px;
     transform: translate(-50%, -50%);
     object-fit: contain;
 }
@@ -616,7 +617,7 @@ body {
 
 .contact_us_person_1 {
     top: 220px;
-    left: 344px;
+    left: 330px;
     width: 88px;
     height: 88px;
     object-fit: contain;
@@ -624,7 +625,7 @@ body {
 
 .contact_us_person_2 {
     top: 372px;
-    left: 358px;
+    left: 343px;
     width: 88px;
     height: 88px;
 }
@@ -655,6 +656,7 @@ body {
     flex: 1;
     min-width: 350px;
     text-align: center;
+    margin-right: 30px;
 }
 
 .contact_us_heading {
@@ -678,21 +680,12 @@ body {
     margin-bottom: 15px;
 }
 
-.contact_us_input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
 .contact_us_input_group {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 .contact_us_label {
-    margin-bottom: 5px;
     font-size: 0.9rem;
     font-weight: 600;
     color: #666;
@@ -730,22 +723,247 @@ body {
     border-radius: 5px;
 }
 
-/* Contact Info */
-.contact_us_info {
-    margin-top: 20px;
-}
-
 .contact_us_icons {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 10px;
+}
+
+.contact_us_icon_link {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact_us_icon {
     width: 40px;
     height: 40px;
+    object-fit: contain;
 }
+
+/* Who Are We */
+.who_are_we_section {
+    overflow: hidden;
+    position: relative;
+}
+
+.camera_vector_image {
+    position: absolute;
+    top: -57px;
+    left: 138px;
+    width: 750px;
+    height: 522px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.who_are_we_container {
+    position: relative;
+    z-index: 2;
+    margin: 30px 9px 0px 35px;
+}
+
+.who_heading {
+    font-weight: 600;
+    font-size: 32px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: right;
+    margin-top: -194px;
+    opacity: 74%;
+}
+
+.who_text {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    text-align: right;
+}
+
+/* Responsive Design for Who Are We Section */
+@media (max-width: 768px) {
+    .who_heading,
+    .who_text {
+        text-align: center;
+        margin-top: 0;
+        opacity: 74%;
+    }
+
+    .who_are_we_container {
+        margin: 20px 15px;
+    }
+}
+
+/* Contact Us */
+.contact_us_section {
+    margin-top: 80px;
+    overflow-x: hidden;
+    max-height: fit-content;
+}
+
+.contact_us_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.contact_us_left {
+    position: relative;
+    flex: 1;
+    min-width: 350px;
+    height: 600px;
+    margin-bottom: 20px;
+}
+
+.contact_us_background {
+    position: absolute;
+    top: 54%;
+    left: 76%;
+    width: 136%;
+    height: 140%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact_us_circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.contact_us_center {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    top: 336px;
+    left: 490px;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.contact_us_person_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.contact_us_person_1 {
+    top: 220px;
+    left: 330px;
+    width: 88px;
+    height: 88px;
+}
+
+.contact_us_person_2 {
+    top: 372px;
+    left: 343px;
+    width: 88px;
+    height: 88px;
+}
+
+.contact_us_person_3 {
+    top: 284px;
+    left: 86px;
+    width: 110px;
+    height: 110px;
+}
+
+.contact_us_person_4 {
+    bottom: 20px;
+    right: 424px;
+    width: 110px;
+    height: 110px;
+}
+
+.contact_us_person_5 {
+    top: 74px;
+    right: 424px;
+    width: 110px;
+    height: 110px;
+}
+
+.contact_us_right {
+    flex: 1;
+    min-width: 350px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.contact_us_heading {
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.74;
+}
+
+.contact_us_form_wrapper {
+    margin-top: 20px;
+}
+
+.contact_us_input {
+    width: 80%;
+    height: 50px;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.contact_us_textarea {
+    width: 80%;
+    height: 100px;
+    margin: 15px auto;
+    padding-left: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.contact_us_submit_button {
+    width: 80%;
+    height: 50px;
+    background-color: #f98d6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact_us_submit_button:hover {
+    background-color: #ea4e30;
+}
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -807,7 +1025,6 @@ body {
         display: none;
         position: absolute;
         top: 70px;
-        /* right: 20px; */
         background-color: white;
         flex-direction: column;
         padding: 20px;
