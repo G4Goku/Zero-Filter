@@ -31,7 +31,7 @@
         <button class="hamburger_button" onclick="toggleNav()">
             <i class="fa-solid fa-bars hamburger_icon"></i>
         </button>
-
+    
         <div class="nav_links_wrapper" id="navLinks">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#who-we-are">Who We Are</a></li>
@@ -42,7 +42,7 @@
                 <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
             </ul>
         </div>
-    </nav>
+    </nav>    
 
     <!-- Banner -->
     <div class="main_banner">
@@ -337,31 +337,45 @@
             <div class="contact_us_right">
                 <h2 class="contact_us_heading">GET IN TOUCH WITH US</h2>
 
-                <form class="contact_us_form">
+                <form id="contactForm" class="contact_us_form">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="contact_us_form_row">
                         <div class="contact_us_input_group">
                             <label for="name" class="contact_us_label">Name :</label>
-                            <input type="text" id="name" name="name" class="contact_us_input">
+                            <input type="text" id="name" name="name" class="contact_us_input" required>
                         </div>
                         <div class="contact_us_input_group">
                             <label for="phone" class="contact_us_label">Phone Number :</label>
-                            <input type="text" id="phone" name="phone" class="contact_us_input">
+                            <input type="text" id="phone" name="phone" class="contact_us_input" required>
                         </div>
                     </div>
                     <div class="contact_us_form_row">
                         <div class="contact_us_input_group">
                             <label for="email" class="contact_us_label">Email :</label>
-                            <input type="email" id="email" name="email" class="contact_us_input">
+                            <input type="email" id="email" name="email" class="contact_us_input" required>
                         </div>
                         <div class="contact_us_input_group">
                             <label for="service" class="contact_us_label">Needed Service :</label>
-                            <input type="text" id="service" name="service" class="contact_us_input">
+                            <select id="service" name="service" class="contact_us_input" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="Photography">Photography</option>
+                                <option value="Videography">Videography</option>
+                                <option value="Branding">Branding</option>
+                                <option value="Design">Design</option>
+                                <option value="3D Services">3D Services</option>
+                            </select>
                         </div>
                     </div>
-                    <button type="submit" class="contact_us_button">Send Message</button>
+                    <button type="submit" class="contact_us_button">Send</button>
                 </form>
-
-
+                <!-- Toast Message -->
+                <div id="toast"
+                    style="display:none; position:fixed; bottom:20px; right:20px; background:#28a745; color:white; padding:12px 20px; border-radius:5px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
+                    Message sent successfully!
+                </div>
                 <div class="contact_us_underline"></div>
 
                 <div class="contact_us_info">
@@ -370,7 +384,8 @@
                             class="contact_us_icon_link" target="_blank" rel="noopener noreferrer">
                             <img src="./assets/icons/instagram_icon.png" alt="Instagram" class="contact_us_icon">
                         </a>
-                        <a href="https://wa.me/+917034437271" class="contact_us_icon_link" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/+917034437271" class="contact_us_icon_link" target="_blank"
+                            rel="noopener noreferrer">
                             <img src="./assets/icons/whatsUp_logo.png" alt="WhatsApp" class="contact_us_icon">
                         </a>
                         <a href="mailto:zerofilterstories@gmail.com" class="contact_us_icon_link">
@@ -393,13 +408,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- Toggle Menu Script -->
     <script>
+        // Toggle Menu Script
         function toggleNav() {
             const nav = document.getElementById("navLinks");
             nav.classList.toggle("show-nav");
         }
+        //animation 
         AOS.init();
+
+        //Form submit and toast message
+        const email = "zerofilterstories@gmail.com"
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent default form submit
+
+            const form = e.target;
+            const data = new FormData(form);
+
+            fetch(`https://formsubmit.co/${email}`, {
+                method: "POST",
+                body: data
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Show toast message
+                        const toast = document.getElementById("toast");
+                        toast.style.display = "block";
+                        setTimeout(() => toast.style.display = "none", 4000);
+                        form.reset(); // clear form
+                    } else {
+                        alert("Something went wrong. Please try again.");
+                    }
+                })
+                .catch(error => alert("Error: " + error.message));
+        });
     </script>
 </body>
 
