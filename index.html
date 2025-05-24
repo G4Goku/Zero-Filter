@@ -31,8 +31,11 @@
         <button class="hamburger_button" onclick="toggleNav()">
             <i class="fa-solid fa-bars hamburger_icon"></i>
         </button>
-    
+
         <div class="nav_links_wrapper" id="navLinks">
+            <button class="close_button" onclick="toggleNav()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#who-we-are">Who We Are</a></li>
                 <li class="nav-item"><a class="nav-link" href="#our-vision">Our Vision</a></li>
@@ -42,11 +45,10 @@
                 <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
             </ul>
         </div>
-    </nav>    
-
+    </nav>
     <!-- Banner -->
-    <div class="main_banner">
-        <img class="main_banner_logo" src="./assets/brandLogos/zeroFIlterLogo.png" alt="Zero Filter Logo" />
+    <div class="main_banner" role="banner">
+        <img class="main_banner_logo" src="./assets/brandLogos/new_logo_white.png" alt="Zero Filter Logo" />
         <img class="main_banner_bg" src="./assets/utilityImages/mainBannerImage.png" alt="Banner Background" />
         <div class="main_banner_text">
             <span>ZERO FILTER</span>
@@ -58,350 +60,35 @@
             </p>
         </div>
     </div>
-
     <!-- Who We Are -->
-    <section id="who-we-are" class="who_are_we_section">
-        <div class="who_are_we_container py-5">
-            <div class="row align-items-center">
-                <!-- Image Side -->
-                <img src="./assets/utilityImages/camera_vector.png" alt="Decorative" class="camera_vector_image" />
-                <div class="col-md-6 mb-4 mb-md-0" data-aos="zoom-in-down" data-aos-duration="1000">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <img src="./assets/utilityImages/who_we_are_1.png" class="img-fluid rounded-4"
-                                alt="Image 1" />
-                        </div>
-                        <div class="col-6">
-                            <img src="./assets/utilityImages/who_we_are_2.png"
-                                class="img-fluid rounded-4 equal-height-img" alt="Image 2" />
-                        </div>
-                        <div class="col-6">
-                            <img src="./assets/utilityImages/who_we_are_3.png"
-                                class="img-fluid rounded-4 equal-height-img" alt="Image 3" />
-                        </div>
-                    </div>
-                </div>
+    <section class="who-we-are-section" id="who-we-are">
+        <img src="./assets/utilityImages/camera_vector.png" alt="Camera Vector" class="background-vector" />
 
-                <!-- Text Side -->
-                <div class="col-md-6 d-flex align-items-center justify-content-end">
-                    <div class="text-end px-3">
-                        <h2 class="who_heading">WHO ARE WE</h2>
-                        <p class="who_text">
-                            At Zero Filter, we are passionate about capturing the beauty of life’s most cherished
-                            moments through stunning visuals. With a focus on photography, videography, graphic
-                            design, branding, wedding photography & videography, and 3D design, we offer an
-                            all-in-one creative solution for individuals and businesses alike. Whether you're looking
-                            to commemorate a special occasion, promote your brand, or bring your ideas to life in 3D,
-                            we are here to turn your vision into a reality.
-                            <br /><br />
-                            Zero Filter is a creative brand built on the principles of authenticity, professionalism,
-                            and artistic innovation. Founded by a passionate team of photographers, videographers,
-                            and designers, our mission is to deliver stunning visuals with zero limitations and
-                            infinite possibilities. From major events to intimate moments, we believe every story
-                            deserves to be told beautifully.
-                        </p>
-                    </div>
-                </div>
+        <div class="who-we-are-images" data-aos="zoom-in-down" data-aos-duration="1000">
+            <img src="./assets/utilityImages/who_we_are_1.png" alt="Top Image" class="top-image" />
+            <div class="bottom-images">
+                <img src="./assets/utilityImages/who_we_are_2.png" alt="Bottom Image 1" />
+                <img src="./assets/utilityImages/who_we_are_3.png" alt="Bottom Image 2" />
             </div>
         </div>
-    </section>
 
-    <!-- Our Vision -->
-    <section id="our-vision" class="our-vision-section text-center">
-        <img class="our_vision_vector-bg our_vision_vector-top-left" src="./assets/utilityImages/Ellipse-2.png" alt="">
-        <p class="vision-heading mb-2">Our Vision</p>
-
-        <!-- Full-width Image -->
-        <div class="vision-image-wrapper" data-aos="fade-up" data-aos-duration="1000">
-            <img src="./assets/utilityImages/our_vision_image.png" alt="Our Vision" class="vision-image img-fluid">
-        </div>
-
-        <!-- Vision Text -->
-        <div class="vision-text-wrapper mt-4">
-            <p class="vision-text">
-                At Zero Filter, we believe in delivering unfiltered, authentic visuals that showcase the true
-                essence of every moment. We aim to provide our clients with high-quality, creative services that
-                are tailored to their unique needs and preferences, ensuring that each project we undertake is as
-                special as the moments we capture.
+        <div class="who-we-are-text">
+            <h2>WHO ARE WE</h2>
+            <p>
+                At Zero Filter, we are passionate about capturing the beauty of life’s most cherished
+                moments through stunning visuals. With a focus on photography, videography, graphic
+                design, branding, wedding photography & videography, and 3D design, we offer an
+                all-in-one creative solution for individuals and businesses alike. Whether you're looking
+                to commemorate a special occasion, promote your brand, or bring your ideas to life in 3D,
+                we are here to turn your vision into a reality. </p>
+            <p>
+                Zero Filter is a creative brand built on the principles of authenticity, professionalism,
+                and artistic innovation. Founded by a passionate team of photographers, videographers,
+                and designers, our mission is to deliver stunning visuals with zero limitations and
+                infinite possibilities. From major events to intimate moments, we believe every story
+                deserves to be told beautifully.
             </p>
         </div>
-    </section>
-
-
-    <!-- Services -->
-    <section id="services" class="py-3 mb-4 text-center">
-        <!-- <img class="service_vector_1 service_vector_1_top_left" src="./assets/utilityImages/Ellipse-2.png" alt=""> -->
-        <p class="service-heading mb-3">Services</p>
-
-        <div class="row g-3 service_container">
-            <!-- Box 1 -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="service_box p-4">
-                    <img src="./assets/icons/service_logo_1.png" data-aos="flip-left" data-aos-duration="1000"
-                        alt="Service 1" class="mb-3" />
-                    <p class="mb-0 service-text" data-aos="fade-up" data-aos-duration="1000"
-                        data-aos-easing="ease-in-out">We specialize in capturing
-                        the magic of life's most special events.
-                        From corporate
-                        events to private parties and concerts, our team ensures that no moment is missed. Our wedding
-                        photography & videography services are crafted to immortalize your big day with elegance and
-                        creativity.</p>
-                </div>
-            </div>
-
-            <!-- Box 2 -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="service_box p-4">
-                    <img src="./assets/icons/service_logo_2.png" alt="Service 2" data-aos-duration="1000"
-                        data-aos="flip-left" class="mb-3" />
-                    <p class="mb-0 service-text" data-aos="fade-up" data-aos-duration="1000"
-                        data-aos-easing="ease-in-out">Our team of
-                        designers creates eye-catching and innovative designs that perfectly
-                        align with your brand or personal vision. Whether you need a logo, marketing materials, or
-                        digital content, we bring fresh ideas and a modern aesthetic to every project.</p>
-                </div>
-            </div>
-
-            <!-- Box 3 -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="service_box p-4">
-                    <img src="./assets/icons/service_logo_3.png" alt="Service 3" data-aos-duration="1000"
-                        data-aos="flip-left" class="mb-3" />
-                    <p class="mb-0 service-text" data-aos="fade-up" data-aos-duration="1000">Your brand identity speaks
-                        volumes about your business, and we’re here
-                        to help make it unforgettable. Our branding services include creating cohesive visuals, logos,
-                        and other elements that make your brand stand out and connect with your audience.</p>
-                </div>
-            </div>
-
-            <!-- Box 4 -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="service_box p-4">
-                    <img src="./assets/icons/service_logo_4.png" alt="Service 4" class="mb-3" data-aos-duration="1000"
-                        data-aos="flip-left" />
-                    <p class="mb-0 service-text" data-aos="fade-up" data-aos-duration="1000">Let us take your ideas to
-                        the next dimension! Our 3D design services
-                        bring concepts to life through detailed and visually stunning models, perfect for branding,
-                        product visualization, or other creative projects.</p>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery" class="  mb-3 gallery_section">
-        <h2 class="gallery-heading mb-3">Gallery</h2>
-        <div class="gallery_grid_container">
-            <!-- Left Top Row -->
-            <div class="gallery_item left-top-1" data-aos="fade-right" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_1.png" alt="image1">
-            </div>
-            <div class="gallery_item left-top-2" data-aos="fade-right" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_2.png" alt="image2">
-            </div>
-            <div class="gallery_item left-top-3" data-aos="fade-right" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_3.png" alt="image3">
-            </div>
-
-            <!-- Left Column -->
-            <div class="gallery_item left-feature-vertical" data-aos="fade-right" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_4.png" alt="image4">
-            </div>
-            <div class="gallery_item left-feature-top" data-aos="fade-right" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_5.png" alt="image5">
-            </div>
-            <div class="gallery_item left-feature-bottom" data-aos="fade-right" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_6.png" alt="image6">
-            </div>
-
-            <!-- Center Divider -->
-            <div class="gallery_item center-divider">
-                <img src="./assets/utilityImages/gallery_7.png" alt="image7">
-            </div>
-
-            <!-- Right Top Row -->
-            <div class="gallery_item right-top-1" data-aos="fade-left" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_8.png" alt="image8">
-            </div>
-            <div class="gallery_item right-top-2" data-aos="fade-left" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_9.png" alt="image9">
-            </div>
-            <div class="gallery_item right-top-3" data-aos="fade-left" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_10.png" alt="image10">
-            </div>
-
-            <!-- Right Column -->
-            <div class="gallery_item right-feature-top" data-aos="fade-left" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_11.png" alt="image11">
-            </div>
-            <div class="gallery_item right-feature-bottom" data-aos="fade-left" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_12.png" alt="image12">
-            </div>
-            <div class="gallery_item right-feature-vertical" data-aos="fade-left" data-aos-duration="1000">
-                <img src="./assets/utilityImages/gallery_13.png" alt="image13">
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Why Us -->
-    <section id="why-us" class="why_us_section">
-        <div class="why_us__container">
-            <h2 class="why_us__title">WHY CHOOSE ZERO FILTER?</h2>
-            <p class="why_us__subtitle">At Zero Filter, we pride ourselves on offering:</p>
-
-            <div class="why_us__cards">
-                <div class="why_us__card">
-                    <h3 class="why_us__card-title">PERSONALIZED SERVICE:</h3>
-                    <p class="why_us__card-text">We work closely with you to ensure your creative vision is brought to
-                        life.</p>
-                </div>
-                <div class="why_us__card">
-                    <h3 class="why_us__card-title">PROFESSIONAL QUALITY:</h3>
-                    <p class="why_us__card-text">We work closely with you to ensure your creative vision is brought to
-                        life.</p>
-                </div>
-                <div class="why_us__card">
-                    <h3 class="why_us__card-title">CREATIVE INNOVATION:</h3>
-                    <p class="why_us__card-text">We work closely with you to ensure your creative vision is brought to
-                        life.</p>
-                </div>
-                <div class="why_us__card">
-                    <h3 class="why_us__card-title">COMPREHENSIVE SOLUTIONS:</h3>
-                    <p class="why_us__card-text">We work closely with you to ensure your creative vision is brought to
-                        life.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Us -->
-    <section id="contact-us" class="contact_us_section">
-        <div class="contact_us_container">
-
-            <div class="contact_us_left">
-                <img src="./assets/utilityImages/Elipse_png-original.png" alt="Background Ellipse"
-                    class="contact_us_background">
-
-                <div class="contact_us_circle contact_us_center">
-                    <a href="https://www.instagram.com/_anandhu_e_s_?igsh=NTc4MTIwNjQ2YQ==" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="./assets/utilityImages/anandhu_png.png" alt="Background Ellipse"
-                            class="contact_us_person_img">
-                    </a>
-
-                </div>
-                <div class="contact_us_circle contact_us_person_1" data-aos="flip-left" data-aos-duration="1000">
-                    <a href="https://www.instagram.com/achu_kasi?igsh=NTc4MTIwNjQ2YQ==" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="./assets/utilityImages/akshay_png.png" alt="Background Ellipse"
-                            class="contact_us_person_img">
-                    </a>
-                </div>
-                <div class="contact_us_circle contact_us_person_2" data-aos="flip-left" data-aos-duration="1000">
-                    <a href="https://www.instagram.com/arun___karappillil___?igsh=NTc4MTIwNjQ2YQ==" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="./assets/utilityImages/arun_png.png" alt="Background Ellipse"
-                            class="contact_us_person_img">
-                    </a>
-                </div>
-                <div class="contact_us_circle contact_us_person_3" data-aos="flip-left" data-aos-duration="1000">
-                    <a href="https://www.instagram.com/paappans_frames_?igsh=NTc4MTIwNjQ2YQ==" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="./assets/utilityImages/pappan_png.png" alt="Background Ellipse"
-                            class="contact_us_person_img">
-                    </a>
-                </div>
-                <div class="contact_us_circle contact_us_person_4" data-aos="flip-left" data-aos-duration="1000">
-                    <a href="https://www.instagram.com/vivek_nelladu?igsh=NTc4MTIwNjQ2YQ==" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="./assets/utilityImages/person_4_png.png" alt="Background Ellipse"
-                            class="contact_us_person_img">
-                    </a>
-                </div>
-                <div class="contact_us_circle contact_us_person_5" data-aos="flip-left" data-aos-duration="1000">
-                    <a href="https://www.instagram.com/stories_by_jerin?igsh=NTc4MTIwNjQ2YQ==" target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="./assets/utilityImages/person_5_png.png" alt="Background Ellipse"
-                            class="contact_us_person_img">
-                    </a>
-                </div>
-            </div>
-
-            <div class="contact_us_right">
-                <h2 class="contact_us_heading">GET IN TOUCH WITH US</h2>
-
-                <form id="contactForm" class="contact_us_form">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-
-                    <div class="contact_us_form_row">
-                        <div class="contact_us_input_group">
-                            <label for="name" class="contact_us_label">Name :</label>
-                            <input type="text" id="name" name="name" class="contact_us_input" required>
-                        </div>
-                        <div class="contact_us_input_group">
-                            <label for="phone" class="contact_us_label">Phone Number :</label>
-                            <input type="text" id="phone" name="phone" class="contact_us_input" required>
-                        </div>
-                    </div>
-                    <div class="contact_us_form_row">
-                        <div class="contact_us_input_group">
-                            <label for="email" class="contact_us_label">Email :</label>
-                            <input type="email" id="email" name="email" class="contact_us_input" required>
-                        </div>
-                        <div class="contact_us_input_group">
-                            <label for="service" class="contact_us_label">Needed Service :</label>
-                            <select id="service" name="service" class="contact_us_input" required>
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="Photography">Photography</option>
-                                <option value="Videography">Videography</option>
-                                <option value="Branding">Branding</option>
-                                <option value="Design">Design</option>
-                                <option value="3D Services">3D Services</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="contact_us_button">Send</button>
-                </form>
-                <!-- Toast Message -->
-                <div id="toast"
-                    style="display:none; position:fixed; bottom:20px; right:20px; background:#28a745; color:white; padding:12px 20px; border-radius:5px; box-shadow:0 0 10px rgba(0,0,0,0.2);">
-                    Message sent successfully!
-                </div>
-                <div class="contact_us_underline"></div>
-
-                <div class="contact_us_info">
-                    <div class="contact_us_icons">
-                        <a href="https://www.instagram.com/zero._filter?igsh=MXJjamdzeWtwcmJ3bQ=="
-                            class="contact_us_icon_link" target="_blank" rel="noopener noreferrer">
-                            <img src="./assets/icons/instagram_icon.png" alt="Instagram" class="contact_us_icon">
-                        </a>
-                        <a href="https://wa.me/+917034437271" class="contact_us_icon_link" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="./assets/icons/whatsUp_logo.png" alt="WhatsApp" class="contact_us_icon">
-                        </a>
-                        <a href="mailto:zerofilterstories@gmail.com" class="contact_us_icon_link">
-                            <img src="./assets/icons/email_icon.png" alt="Email" class="contact_us_icon">
-                        </a>
-                        <a href="tel:+917034437271" class="contact_us_icon_link">
-                            <img src="./assets/icons/phone_icon.png" alt="Phone"
-                                class="contact_us_icon contact_us_icon_phone">
-                        </a>
-                        <a href="https://www.youtube.com/@anandhues6180" class="contact_us_icon_link" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="./assets/icons/Yt.png" alt="youtube" class="contact_us_icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
     </section>
 
     <!-- JS Libraries -->
