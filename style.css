@@ -172,8 +172,10 @@ body {
     position: relative;
     background-color: #fff;
     overflow: hidden;
-    flex-wrap: wrap; /* For responsive layout */
-    gap: 2rem; /* Optional spacing */
+    flex-wrap: wrap;
+    /* For responsive layout */
+    gap: 2rem;
+    /* Optional spacing */
 }
 
 /* Background vector image */
@@ -189,7 +191,8 @@ body {
 
 /* Left side images */
 .who-we-are-images {
-    flex: 0 1 48%; /* Precise size control */
+    flex: 0 1 48%;
+    /* Precise size control */
     display: grid;
     grid-template-rows: auto auto;
     gap: 1rem;
@@ -200,7 +203,8 @@ body {
     width: 100%;
     border-radius: 1rem;
     object-fit: cover;
-    height: 230px; /* Adjust height as needed */
+    height: 230px;
+    /* Adjust height as needed */
 }
 
 .who-we-are-images .bottom-images {
@@ -213,15 +217,17 @@ body {
     width: 100%;
     border-radius: 1rem;
     object-fit: cover;
-    height: 290px; /* Adjust height for smaller images */
+    height: 290px;
+    /* Adjust height for smaller images */
 }
 
 /* Right side text */
 .who-we-are-text {
-    flex: 0 1 45%; /* Adjusted for alignment */
+    flex: 0 1 45%;
+    /* Adjusted for alignment */
     text-align: right;
     z-index: 1;
-    
+
 }
 
 .who-we-are-text h2 {
@@ -237,36 +243,66 @@ body {
     color: #555;
     margin-bottom: 1rem;
 }
-/* our vision */
-/* .our-vision-section {
-    padding: 60px 0;
-    background-color: #fff;
-  } */
 
+/* Our Vision Section */
+.our-vision-section {
+    position: relative;
+    text-align: center;
+    padding: 0rem 4rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Background Vector */
+.our_vision_vector-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: auto;
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Heading */
 .vision-heading {
-    font-size: 28px;
+    font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
     color: #666;
     font-family: 'Poppins', sans-serif;
+    opacity: 0.74;
     margin-bottom: 30px;
-    opacity: 74%;
+    z-index: 1;
+    position: relative;
 }
 
+/* Vision Image */
 
+.vision-image-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
+/* Full-width Vision Image */
 .vision-image {
-    width: 96%;
+    width: 100%;
     height: auto;
     border-radius: 24px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     display: block;
-    margin: 14px 36px 0px 36px;
+    object-fit: cover;
 }
 
 .vision-text-wrapper {
-    max-width: 850px;
-    margin: 40px auto 0 auto;
+    width: 78%;
+    margin: 30px auto 0 auto;
+    text-align: center;
     padding: 0 20px;
 }
 
@@ -275,21 +311,7 @@ body {
     color: #666;
     line-height: 1.8;
     font-weight: 300;
-    font-size: 16px;
-}
-
-.our_vision_vector-bg {
-    position: absolute;
-    z-index: 0;
-    opacity: 100%;
-    /* transform: rotate(45deg); */
-    pointer-events: none;
-}
-
-.our_vision_vector-top-left {
-    left: -1px;
-    width: 128px;
-    height: auto;
+    font-size: 1rem;
 }
 
 /* Services */
@@ -1022,7 +1044,8 @@ body {
 
     .who-we-are-text {
         text-align: center;
-    }}
+    }
+}
 
 @media (max-width: 992px) {
 
@@ -1105,14 +1128,46 @@ body {
     .who-we-are-text h2 {
         font-size: 2rem;
     }
+
     .who-we-are-images .top-image {
         height: 140px;
     }
+
     .who-we-are-section .background-vector {
         top: 301px;
         left: -37px;
         width: 348px;
-        height: 348px;
+        height: 300px;
+    }
+
+    /* Our vision */
+    .vision-heading {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+
+    .vision-image {
+        width: 95%;
+        margin: 16px auto;
+    }
+
+    .vision-text-wrapper {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .vision-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .our_vision_vector-bg {
+        width: 80px;
+        opacity: 0.1;
+    }
+
+    .our-vision-section {
+        padding: 0rem 1rem;
     }
 }
 
@@ -1122,14 +1177,28 @@ body {
     .main_banner_text p {
         font-size: 0.95rem;
     }
+
+    /* Our vision */
+    .vision-heading {
+        font-size: 1.5rem;
+    }
+
+    .vision-text {
+        font-size: 0.9rem;
+    }
+
+    .our-vision-section {
+        padding: 0rem 1rem;
+    }
 }
 
 @media (max-width: 320px) {
 
-   /* Who are we */
+    /* Who are we */
     .who-we-are-images .bottom-images img {
         height: 115px;
     }
+
     .who-we-are-images .top-image {
         height: 108px;
     }
