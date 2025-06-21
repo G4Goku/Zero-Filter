@@ -940,7 +940,63 @@ body {
     text-align: right;
 }
 
+/* Tablet Devices */
+@media (max-width: 1024px) {
+    .contact_us_left {
+        transform: scale(0.85);
+        transform-origin: center;
+    }
+
+    .contact_us_right {
+        margin-right: 0;
+    }
+}
+
+/* Small Tablets and Large Phones */
+@media (max-width: 768px) {
+    .contact_us_left {
+        transform: scale(0.75);
+        transform-origin: center;
+        margin-bottom: 40px;
+    }
+
+    .contact_us_heading {
+        font-size: 24px;
+    }
+
+    .contact_us_input,
+    .contact_us_textarea,
+    .contact_us_submit_button {
+        width: 90%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .contact_us_left {
+        transform: scale(0.65);
+        transform-origin: center;
+    }
+
+    .contact_us_heading {
+        font-size: 20px;
+    }
+
+    .contact_us_input,
+    .contact_us_textarea,
+    .contact_us_submit_button {
+        width: 95%;
+    }
+
+    .contact_us_container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
 /* Contact Us */
+/* Contact Us Base Styles */
 .contact_us_section {
     margin-top: 80px;
     overflow-x: hidden;
@@ -978,8 +1034,6 @@ body {
 
 .contact_us_circle {
     position: absolute;
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     display: flex;
@@ -993,13 +1047,10 @@ body {
 }
 
 .contact_us_center {
-    width: 140px;
-    height: 140px;
     background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-    top: 336px;
-    left: 490px;
+    top: 56%;
+    left: 68%;
     transform: translate(-50%, -50%);
-    object-fit: contain;
 }
 
 .contact_us_person_img {
@@ -1013,39 +1064,30 @@ body {
     z-index: 0;
 }
 
+/* Person Circles with % dimensions and positions */
 .contact_us_person_1 {
-    top: 220px;
-    left: 330px;
-    width: 88px;
-    height: 88px;
+    top: 36%;
+    left: 48%;
 }
 
 .contact_us_person_2 {
-    top: 372px;
-    left: 343px;
-    width: 88px;
-    height: 88px;
+    top: 61%;
+    left: 48%;
 }
 
 .contact_us_person_3 {
-    top: 284px;
-    left: 86px;
-    width: 110px;
-    height: 110px;
+    top: 47%;
+    left: 11%;
 }
 
 .contact_us_person_4 {
-    bottom: 20px;
-    right: 424px;
-    width: 110px;
-    height: 110px;
+    bottom: 3%;
+    right: 53%;
 }
 
 .contact_us_person_5 {
-    top: 74px;
-    right: 424px;
-    width: 110px;
-    height: 110px;
+    top: 11%;
+    right: 56%;
 }
 
 .contact_us_right {
@@ -1062,10 +1104,6 @@ body {
     color: #666;
     font-family: 'Poppins', sans-serif;
     opacity: 0.74;
-}
-
-.contact_us_form_wrapper {
-    margin-top: 20px;
 }
 
 .contact_us_input {
@@ -1089,7 +1127,8 @@ body {
     font-size: 16px;
 }
 
-.contact_us_submit_button {
+.contact_us_submit_button,
+.contact_us_button {
     width: 80%;
     height: 50px;
     background-color: #f98d6a;
@@ -1101,9 +1140,203 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.contact_us_submit_button:hover {
+.contact_us_submit_button:hover,
+.contact_us_button:hover {
     background-color: #ea4e30;
 }
+
+.contact_us_icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact_us_icon {
+    width: 30px;
+    height: 30px;
+    transition: filter 0.3s ease;
+}
+
+.contact_us_icon:hover {
+    filter: brightness(0) saturate(100%) invert(68%) sepia(29%) saturate(987%) hue-rotate(131deg) brightness(95%) contrast(90%);
+}
+
+/* Responsive Scaling */
+@media (max-width: 480px) {
+    .contact_us_container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact_us_left {
+        transform: scale(1.3);
+        /* Was 0.6 — now less aggressive */
+        transform-origin: top center;
+        min-height: 245px;
+        overflow: visible;
+    }
+
+    .contact_us_heading {
+        font-size: 20px;
+        margin-top: 85px;
+    }
+    .contact_us_right{
+        margin-right: 0px;
+    }
+
+    .contact_us_input,
+    .contact_us_textarea,
+    .contact_us_button {
+        width: 95%;
+    }
+
+    .contact_us_person_1,
+    .contact_us_person_2,
+    .contact_us_person_3,
+    .contact_us_person_4,
+    .contact_us_person_5,
+    .contact_us_center {
+        transform: scale(0.75);
+        /* Was 0.7 — more visible */
+    }
+}
+
+/* Tablet Devices (<=1024px) */
+@media (max-width: 1024px) {
+    .contact_us_person_1 {
+        top: 36%;
+        left: 54%;
+        width: 14%;
+        height: 14%;
+    }
+
+    .contact_us_person_2 {
+        top: 60%;
+        left: 56%;
+        width: 14%;
+        height: 14%;
+    }
+
+    .contact_us_person_3 {
+        top: 46%;
+        left: 13%;
+        width: 18%;
+        height: 18%;
+    }
+
+    .contact_us_person_4 {
+        bottom: 4%;
+        right: 27%;
+        width: 18%;
+        height: 18%;
+    }
+
+    .contact_us_person_5 {
+        top: 11%;
+        right: 27%;
+        width: 18%;
+        height: 18%;
+    }
+
+    .contact_us_center {
+        top: 56%;
+        left: 80%;
+        width: 23%;
+        height: 23%;
+    }
+}
+
+/* Mobile Devices (<=768px) */
+@media (max-width: 768px) {
+    .contact_us_person_1 {
+        top: 34%;
+        left: 53%;
+        width: 15%;
+        height: 15%;
+    }
+
+    .contact_us_person_2 {
+        top: 60%;
+        left: 55%;
+        width: 15%;
+        height: 15%;
+    }
+
+    .contact_us_person_3 {
+        top: 44%;
+        left: 10%;
+        width: 17%;
+        height: 17%;
+    }
+
+    .contact_us_person_4 {
+        bottom: 5%;
+        right: 22%;
+        width: 17%;
+        height: 17%;
+    }
+
+    .contact_us_person_5 {
+        top: 10%;
+        right: 22%;
+        width: 17%;
+        height: 17%;
+    }
+
+    .contact_us_center {
+        top: 55%;
+        left: 78%;
+        width: 22%;
+        height: 22%;
+    }
+}
+
+/* Small Mobile Devices (<=480px) */
+@media (max-width: 480px) {
+    .contact_us_person_1 {
+        top: 33%;
+        left: 47%;
+        width: 12%;
+        height: 17%
+    }
+
+    .contact_us_person_2 {
+        top: 63%;
+        left: 47%;
+        width: 12%;
+        height: 17%
+    }
+
+    .contact_us_person_3 {
+        top: 44%;
+        left: 10%;
+        width: 19%;
+        height: 26%;
+    }
+
+    .contact_us_person_4 {
+        top: 85%;
+        right: 53%;
+        width: 17%;
+        height: 24%;
+    }
+
+    .contact_us_person_5 {
+        top: 0%;
+        right: 53%;
+        width: 17%;
+        height: 24%;
+    }
+
+    .contact_us_center {
+        top: 39%;
+        left: 56%;
+        width: 25%;
+        height: 35%;
+    }
+}
+
 
 
 /* Responsive Design */
