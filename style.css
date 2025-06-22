@@ -396,8 +396,6 @@ body {
 /* gallery */
 .gallery_section {
     text-align: center;
-    justify-content: center;
-    align-content: center;
 }
 
 .gallery-heading {
@@ -409,33 +407,37 @@ body {
     opacity: 0.74;
 }
 
-/* Wrapper to center and limit max width */
+/* Wrapper to center and constrain overflow */
 .gallery_wrapper {
-    max-width: 100%;
-    width: 1200px;
-    /* fixed width of grid */
-    margin: 0 auto;
+    display: flex;
+    /* ✅ Make it a flex container */
+    justify-content: center;
+    /* ✅ Center horizontally */
+    align-items: center;
+    /* Optional */
+    width: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 0 10px;
-    /* optional padding */
 }
 
-/* Grid container with fixed columns/rows */
+
+
+/* Grid container */
 .gallery_grid_container {
     display: grid;
     grid-template-columns: repeat(8, 170px);
     grid-template-rows: repeat(7, 59px);
     gap: 10px;
-    justify-content: center;
-    align-content: center;
-    box-sizing: border-box;
-    width: 1200px;
-    /* fixed width matching 8 columns * 170 + gaps */
+    width: fit-content;
+    /* ✅ Let it size to content */
     margin: 0 auto;
-    transition: transform 0.3s ease;
-    transform-origin: top center;
+    /* ✅ Center horizontally */
+    box-sizing: border-box;
+    margin: 0px 0px 0px 181px;
 }
+
+
+
 
 .gallery_item {
     border-radius: 20px;
@@ -582,15 +584,25 @@ body {
 }
 
 /* Responsive scaling for smaller screens */
-@media (max-width: 1280px) {
+
+@media (max-width: 1700px) {
+    .gallery_grid_container {
+        transform: scale(1);
+        margin: 0px 0px 0px 172px
+    }
+}
+
+@media (max-width: 1500px) {
     .gallery_grid_container {
         transform: scale(0.9);
+        margin: 0px 0px 0px 167px;
     }
 }
 
 @media (max-width: 1100px) {
     .gallery_grid_container {
-        transform: scale(0.75);
+        transform: scale(0.7);
+        margin: -67px 0px -59px 131px;
     }
 }
 
@@ -602,6 +614,8 @@ body {
 
 @media (max-width: 600px) {
     .gallery_grid_container {
+        transform: scale(0.3);
+        margin: -178px 0px -172px 60px;
         transform: scale(0.45);
     }
 
@@ -1181,8 +1195,9 @@ body {
         font-size: 20px;
         margin-top: 85px;
     }
-    .contact_us_right{
-        margin-right: 0px;
+
+    .contact_us_right {
+        margin-right: -15px;
     }
 
     .contact_us_input,
