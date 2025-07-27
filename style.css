@@ -937,7 +937,7 @@ body {
 }
 
 .contact_us_icon:hover {
-    filter: brightness(0) saturate(100%) invert(25%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+    filter: brightness(1) saturate(3) sepia(0.25) hue-rotate(-20deg) contrast(1);
 }
 
 /* Who Are We */
@@ -1196,10 +1196,6 @@ body {
     width: 30px;
     height: 30px;
     transition: filter 0.3s ease;
-}
-
-.contact_us_icon:hover {
-    filter: brightness(0) saturate(100%) invert(68%) sepia(29%) saturate(987%) hue-rotate(131deg) brightness(95%) contrast(90%);
 }
 
 /* Responsive Scaling */
