@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#281917" />
     <meta
       name="description"
       content="Zero Filter Stories creates authentic photography, videography, branding, and design for weddings, events, and growing brands."
@@ -28,14 +28,14 @@
     />
     <meta
       property="og:image"
-      content="https://www.zerofilterstories.com/assets/brandLogos/golden_logo-preview.webp"
+      content="https://www.zerofilterstories.com/assets/brandLogos/logo_brown-preview.webp"
     />
     <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:width" content="1044" />
+    <meta property="og:image:height" content="1044" />
     <meta
       property="og:image:alt"
-      content="Zero Filter Stories golden logo on a black circular background"
+      content="Zero Filter Stories cream-colored logo on a dark brown circular background"
     />
 
     <meta name="twitter:card" content="summary" />
@@ -50,23 +50,44 @@
     />
     <meta
       name="twitter:image"
-      content="https://www.zerofilterstories.com/assets/brandLogos/golden_logo-preview.webp"
+      content="https://www.zerofilterstories.com/assets/brandLogos/logo_brown-preview.webp"
     />
     <meta
       name="twitter:image:alt"
-      content="Zero Filter Stories golden logo on a black circular background"
+      content="Zero Filter Stories cream-colored logo on a dark brown circular background"
     />
 
     <link
+      rel="preload"
+      href="/assets/fonts/Poppins-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Aesthetic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/HavensBrooke.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
       rel="icon"
       type="image/webp"
-      href="/assets/brandLogos/golden_logo.webp"
+      href="/assets/brandLogos/logo_brown-512.webp"
       sizes="512x512"
     />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link
       rel="apple-touch-icon"
-      href="/assets/brandLogos/golden_logo-apple-touch-icon.png"
+      href="/assets/brandLogos/logo_brown-apple-touch-icon.png"
       sizes="180x180"
     />
     <link rel="manifest" href="/site.webmanifest" />
@@ -81,8 +102,8 @@
             "@id": "https://www.zerofilterstories.com/#organization",
             "name": "Zero Filter Stories",
             "url": "https://www.zerofilterstories.com/",
-            "logo": "https://www.zerofilterstories.com/assets/brandLogos/golden_logo.webp",
-            "image": "https://www.zerofilterstories.com/assets/brandLogos/golden_logo-preview.webp",
+            "logo": "https://www.zerofilterstories.com/assets/brandLogos/logo_brown-512.webp",
+            "image": "https://www.zerofilterstories.com/assets/brandLogos/logo_brown-preview.webp",
             "description": "Authentic photography, videography, branding, and design for weddings, events, and growing brands."
           },
           {
@@ -98,5 +119,116 @@
       }
     </script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <picture class="hero__media" aria-hidden="true">
+          <source
+            srcset="./assets/utilityImages/Banner.webp"
+            type="image/webp"
+          />
+          <img
+            class="hero__image"
+            src="./assets/utilityImages/Banner.png"
+            alt=""
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <header class="site-header">
+          <a class="site-header__brand" href="#home" aria-label="Zero Filter Stories home">
+            <img
+              class="site-header__logo"
+              src="./assets/brandLogos/logo_white.webp"
+              alt="Zero Filter Stories"
+              width="640"
+              height="608"
+              fetchpriority="high"
+            />
+          </a>
+
+          <nav class="site-nav" aria-label="Main navigation">
+            <ul class="site-nav__list">
+              <li><a class="site-nav__link" href="#who-we-are">Who are we</a></li>
+              <li><a class="site-nav__link" href="#our-vision">Our vision</a></li>
+              <li><a class="site-nav__link" href="#our-stories">Our stories</a></li>
+              <li><a class="site-nav__link" href="#contact">Contact us</a></li>
+            </ul>
+          </nav>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-haspopup="dialog"
+            aria-controls="mobile-navigation"
+            aria-expanded="false"
+          >
+            <span class="menu-toggle__icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </header>
+
+        <dialog
+          class="mobile-nav"
+          id="mobile-navigation"
+          aria-labelledby="mobile-nav-title"
+        >
+          <div class="mobile-nav__header">
+            <a class="mobile-nav__brand" href="#home" aria-label="Zero Filter Stories home">
+              <img
+                class="mobile-nav__logo"
+                src="./assets/brandLogos/logo_white.webp"
+                alt=""
+                width="640"
+                height="608"
+              />
+            </a>
+            <button
+              class="mobile-nav__close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <span class="menu-toggle__icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+          <h2 class="mobile-nav__title" id="mobile-nav-title">Explore</h2>
+          <nav aria-label="Mobile navigation">
+            <ul class="mobile-nav__list">
+              <li><a class="mobile-nav__link" href="#who-we-are">Who are we</a></li>
+              <li><a class="mobile-nav__link" href="#our-vision">Our vision</a></li>
+              <li><a class="mobile-nav__link" href="#our-stories">Our stories</a></li>
+              <li><a class="mobile-nav__link" href="#contact">Contact us</a></li>
+            </ul>
+          </nav>
+        </dialog>
+
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">
+            Zero Filter Stories — capturing life’s raw beauty, unfiltered
+          </h1>
+          <p class="hero__description">
+            At Zero Filter, we showcase the true essence of every moment—unedited,
+            authentic, and full of life. From weddings and special events to
+            distinctive brand visuals, we create stories that feel like you.
+          </p>
+        </div>
+
+        <ul class="hero__values" aria-label="Our approach">
+          <li class="hero__value">Unfiltered.</li>
+          <li class="hero__value">Unforgettable.</li>
+          <li class="hero__value">Unscripted.</li>
+        </ul>
+      </section>
+    </main>
+    <script src="./navigation.js" defer></script>
+  </body>
 </html>
