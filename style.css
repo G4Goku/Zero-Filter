@@ -367,6 +367,148 @@ body {
     }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .hero__media {
+        inset-block: -15%;
+        will-change: transform;
+    }
+
+    .about__intro,
+    .about__vision,
+    .about__approach {
+        opacity: 1;
+        transform: translate3d(0, var(--about-glide-y, 0px), 0);
+        transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .scroll-motion-ready .about:not(.is-visible) .about__intro,
+    .scroll-motion-ready .about:not(.is-visible) .about__vision,
+    .scroll-motion-ready .about:not(.is-visible) .about__approach {
+        opacity: 0;
+    }
+
+    .about.is-visible .about__vision {
+        transition-delay: 100ms;
+    }
+
+    .about.is-visible .about__approach {
+        transition-delay: 200ms;
+    }
+}
+
+.about {
+    position: relative;
+    display: grid;
+    min-height: clamp(36rem, 42vw, 42rem);
+    align-items: stretch;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--color-surface);
+    background-image:
+        linear-gradient(
+            90deg,
+            rgb(18 15 14 / 72%) 0%,
+            rgb(18 15 14 / 60%) 42%,
+            rgb(18 15 14 / 48%) 68%,
+            rgb(18 15 14 / 24%) 100%
+        ),
+        linear-gradient(180deg, rgb(18 15 14 / 18%), rgb(18 15 14 / 28%)),
+        url("./assets/utilityImages/who_are_we_banner.webp");
+    background-position: center, center, center;
+    background-size: cover;
+    color: var(--color-text-secondary);
+}
+
+.about__inner {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
+    align-content: space-between;
+    width: 100%;
+    min-height: inherit;
+    padding: clamp(2.25rem, 3vw, 3rem) clamp(1.5rem, 4.5vw, 4.5rem);
+}
+
+.about__intro {
+    grid-column: 1 / span 8;
+    padding: 0 clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 2vw, 2rem) 0;
+    border-right: 1px solid var(--color-border);
+    text-align: right;
+}
+
+.about__eyebrow {
+    margin-bottom: 0.55rem;
+    color: var(--color-accent);
+    font-family: var(--font-poppins);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.about__title {
+    margin-bottom: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--color-text-secondary);
+    font-family: var(--font-aesthetic);
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.about__copy,
+.about__detail-copy {
+    color: rgb(255 250 241 / 88%);
+    font-family: var(--font-poppins);
+    font-size: clamp(0.84rem, 1vw, 0.98rem);
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.about__copy + .about__copy {
+    margin-top: 1rem;
+}
+
+.about__details {
+    display: grid;
+    grid-column: 1 / span 8;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    align-self: end;
+}
+
+.about__vision,
+.about__approach {
+    padding: clamp(1rem, 1.6vw, 1.5rem);
+    text-align: right;
+}
+
+.about__vision {
+    grid-column: 1 / span 4;
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+}
+
+.about__approach {
+    grid-column: 5 / span 4;
+    border-right: 1px solid var(--color-border);
+}
+
+.about__detail-title {
+    margin-bottom: 0.65rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-aesthetic);
+    font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+    font-weight: 400;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.about__detail-copy {
+    font-size: clamp(0.8rem, 0.92vw, 0.9rem);
+    line-height: 1.7;
+}
+
 @media (max-width: 640px) {
     .hero {
         grid-template-rows: auto 1fr auto;
@@ -638,6 +780,82 @@ body {
     .hero__value {
         font-size: clamp(0.56rem, 2.5vw, 0.72rem);
     }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .hero__media {
+            inset-block: -8%;
+        }
+    }
+
+    .about {
+        min-height: 0;
+        background-image:
+            linear-gradient(
+                180deg,
+                rgb(18 15 14 / 66%) 0%,
+                rgb(18 15 14 / 78%) 55%,
+                rgb(18 15 14 / 70%) 100%
+            ),
+            url("./assets/utilityImages/who_are_we_banner.webp");
+        background-position: center, 64% center;
+    }
+
+    .about__inner {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        gap: 2rem;
+        min-height: 0;
+        padding: clamp(3.5rem, 12vw, 5rem) clamp(1.25rem, 6vw, 2rem);
+    }
+
+    .about__intro,
+    .about__details {
+        grid-column: 1;
+    }
+
+    .about__intro {
+        padding: 0 0 1.75rem;
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+        text-align: left;
+    }
+
+    .about__title {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+    }
+
+    .about__copy,
+    .about__detail-copy {
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    .about__details {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .about__vision,
+    .about__approach {
+        grid-column: 1;
+        padding: 0;
+        text-align: left;
+    }
+
+    .about__vision {
+        padding-top: 1.25rem;
+        border-right: 0;
+    }
+
+    .about__approach {
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--color-border);
+        border-right: 0;
+    }
+
+    .about__detail-title {
+        font-size: 1.45rem;
+    }
 }
 
 @media (max-width: 360px) {
@@ -655,6 +873,7 @@ body {
     }
 
     .hero__image,
+    .hero__media,
     .site-header__brand,
     .site-header__logo,
     .site-nav__link,
@@ -663,6 +882,18 @@ body {
     .hero__description,
     .hero__value {
         animation: none !important;
+    }
+
+    .hero__media {
+        inset-block: 0;
+        transform: none !important;
+        will-change: auto;
+    }
+
+    .about__intro,
+    .about__vision,
+    .about__approach {
+        transform: none !important;
     }
 
     .mobile-nav[open] {
