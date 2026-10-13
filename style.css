@@ -513,7 +513,7 @@ body {
 
     .mobile-nav__logo {
         display: block;
-        width: clamp(7.5rem, 34vw, 10rem);
+        width: clamp(3.5rem, 19vw, 7rem);
         height: auto;
         object-fit: contain;
     }
