@@ -2,6 +2,8 @@ const hero = document.querySelector(".hero");
 const heroMedia = document.querySelector(".hero__media");
 const aboutSection = document.querySelector(".about");
 const whyChooseUsSection = document.querySelector(".why-choose-us");
+const featuredStoriesSection = document.querySelector(".featured-stories");
+const termsAndConditionsSection = document.querySelector(".terms-and-conditions");
 const aboutGlideElements = aboutSection
   ? [
       { element: aboutSection.querySelector(".about__intro"), distance: 36 },
@@ -70,6 +72,22 @@ function updateScrollAnimations() {
     whyChooseUsSection.getBoundingClientRect().top < window.innerHeight * 0.85
   ) {
     whyChooseUsSection.classList.add("is-visible");
+  }
+
+  if (
+    featuredStoriesSection &&
+    !featuredStoriesSection.classList.contains("is-visible") &&
+    featuredStoriesSection.getBoundingClientRect().top < window.innerHeight * 0.85
+  ) {
+    featuredStoriesSection.classList.add("is-visible");
+  }
+
+  if (
+    termsAndConditionsSection &&
+    !termsAndConditionsSection.classList.contains("is-visible") &&
+    termsAndConditionsSection.getBoundingClientRect().top < window.innerHeight * 0.85
+  ) {
+    termsAndConditionsSection.classList.add("is-visible");
   }
 }
 
