@@ -120,6 +120,45 @@
     </script>
   </head>
   <body>
+    <header class="site-header">
+      <a class="site-header__brand" href="#home" aria-label="Zero Filter Stories home">
+        <img
+          class="site-header__logo"
+          src="./assets/brandLogos/logo_white.webp"
+          alt="Zero Filter Stories"
+          width="640"
+          height="608"
+          fetchpriority="high"
+        />
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#home">Home</a></li>
+          <li><a class="site-nav__link" href="#who-we-are">Who are we</a></li>
+          <li><a class="site-nav__link" href="#why-us">Why us</a></li>
+          <li><a class="site-nav__link" href="#our-stories">Our stories</a></li>
+          <li><a class="site-nav__link" href="#terms">Terms &amp; Conditions</a></li>
+          <li><a class="site-nav__link" href="#contact">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-haspopup="dialog"
+        aria-controls="mobile-navigation"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle__icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </header>
+
     <main>
       <section class="hero" id="home" aria-labelledby="hero-title">
         <picture class="hero__media" aria-hidden="true">
@@ -136,44 +175,7 @@
         </picture>
         <div class="hero__overlay" aria-hidden="true"></div>
 
-        <header class="site-header">
-          <a class="site-header__brand" href="#home" aria-label="Zero Filter Stories home">
-            <img
-              class="site-header__logo"
-              src="./assets/brandLogos/logo_white.webp"
-              alt="Zero Filter Stories"
-              width="640"
-              height="608"
-              fetchpriority="high"
-            />
-          </a>
-
-          <nav class="site-nav" aria-label="Main navigation">
-            <ul class="site-nav__list">
-              <li><a class="site-nav__link" href="#home">Home</a></li>
-              <li><a class="site-nav__link" href="#who-we-are">Who are we</a></li>
-              <li><a class="site-nav__link" href="#why-us">Why us</a></li>
-              <li><a class="site-nav__link" href="#our-stories">Our stories</a></li>
-              <li><a class="site-nav__link" href="#terms">Terms &amp; Conditions</a></li>
-              <li><a class="site-nav__link" href="#contact">Contact us</a></li>
-            </ul>
-          </nav>
-
-          <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-haspopup="dialog"
-            aria-controls="mobile-navigation"
-            aria-expanded="false"
-          >
-            <span class="menu-toggle__icon" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-        </header>
+        <div class="hero__header-space" aria-hidden="true"></div>
 
         <dialog
           class="mobile-nav"
@@ -504,17 +506,22 @@
             />
           </a>
           <a
-            class="featured-stories__photo featured-stories__photo--nine"
-            href="#"
-            aria-label="Open story: Home wedding story cover"
+            class="featured-stories__photo featured-stories__photo--nine featured-stories__photo--all"
+            href="https://www.instagram.com/zero.filter.stories?psln=MXJjamdzeWtwcmJ3bQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explore stories on Instagram (opens in a new tab)"
           >
             <img
               class="featured-stories__image"
               src="./assets/utilityImages/story-4.webp"
-              alt="Home wedding story cover"
+              alt=""
               loading="lazy"
               decoding="async"
             />
+            <span class="featured-stories__all-label" aria-hidden="true">
+              <span class="featured-stories__all-title">More</span>
+            </span>
           </a>
         </div>
       </section>
