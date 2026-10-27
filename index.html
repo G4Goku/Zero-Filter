@@ -379,6 +379,20 @@
         id="our-stories"
         aria-labelledby="featured-stories-title"
       >
+        <svg
+          class="featured-stories__arch"
+          viewBox="0 0 941 474"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M32-8A965 965 0 0 1 462 482" pathLength="1" />
+          <path d="M214 482C214 272 520 0 941 102" pathLength="1" />
+          <path d="M-8 147A531.84 531.84 0 0 1 510 482" pathLength="1" />
+          <path d="M-8 307A829.14 829.14 0 0 1 872 482" pathLength="1" />
+          <path d="M941 78C806 142 730 248 742 350C747 400 763 448 800 482" pathLength="1" />
+        </svg>
+
         <header class="featured-stories__heading">
           <h2 class="featured-stories__title" id="featured-stories-title">
             Featured stories
@@ -386,20 +400,6 @@
         </header>
 
         <div class="featured-stories__canvas">
-          <svg
-            class="featured-stories__arch"
-            viewBox="0 0 941 474"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path d="M32-8A965 965 0 0 1 462 482" pathLength="1" />
-            <path d="M214 482C214 272 520 0 941 102" pathLength="1" />
-            <path d="M-8 147A531.84 531.84 0 0 1 510 482" pathLength="1" />
-            <path d="M-8 307A829.14 829.14 0 0 1 872 482" pathLength="1" />
-            <path d="M941 78C806 142 730 248 742 350C747 400 763 448 800 482" pathLength="1" />
-          </svg>
-
           <a
             class="featured-stories__photo featured-stories__photo--one"
             href="https://anandhuportfolio.my.canva.site/gallery/arjun-x-dhivya"
@@ -557,7 +557,7 @@
           </header>
 
           <div class="terms-and-conditions__content">
-            <ol class="terms-and-conditions__list">
+            <ol class="terms-and-conditions__list" id="terms-list">
               <li class="terms-and-conditions__item">
                 <span class="terms-and-conditions__number" aria-hidden="true">01</span>
                 <div class="terms-and-conditions__copy">
@@ -643,6 +643,18 @@
                 </div>
               </li>
             </ol>
+            <button
+              class="terms-and-conditions__toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="terms-list"
+              hidden
+            >
+              <span class="terms-and-conditions__toggle-label">See more</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                <path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -790,6 +802,7 @@
     </div>
     <p class="contact__status" role="status" aria-live="polite" aria-atomic="true"></p>
     <script src="./navigation.js" defer></script>
+    <script src="./terms.js" defer></script>
     <script src="./scroll-animations.js" defer></script>
     <script src="./contact.js" defer></script>
   </body>
