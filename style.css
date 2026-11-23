@@ -2054,6 +2054,10 @@ body {
     transform: translate(-2.71cqw, 1cqw);
 }
 
+.crew__nav {
+    display: none;
+}
+
 .crew__member {
     position: absolute;
     top: 0;
@@ -2804,56 +2808,134 @@ body {
         opacity: 0.3;
     }
 
+    /* Mobile: the desktop group portrait, unchanged in arrangement, drawn on
+       a stage --stage-scale times the screen width inside a horizontal
+       scroller. Every desktop position/size variable is simply multiplied. */
     .crew__members {
+        --stage-scale: 2.5;
         position: relative;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.5rem 0;
-        padding: calc(1rem + 1cqw) 5% 0;
+        inset: auto;
+        height: calc(37cqw * var(--stage-scale));
+        margin-top: 0.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
         transform: none;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+
+    .crew__members::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Gives the scroller its full stage width. */
+    .crew__members::after {
+        position: absolute;
+        top: 0;
+        left: calc(100% * var(--stage-scale));
+        width: 1px;
+        height: 1px;
+        content: "";
     }
 
     .crew__member {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        min-width: 0;
-        padding-bottom: 0.25rem;
+        left: calc((var(--member-left) - 2.71cqw) * var(--stage-scale));
+        width: calc(var(--member-width, 18%) * var(--stage-scale));
     }
 
-    .crew__portrait {
-        position: relative;
-        top: auto;
-        width: 100%;
-    }
-
+    .crew__portrait,
     .crew__profile-hit {
-        top: 0;
+        top: calc((var(--portrait-top) + 1cqw) * var(--stage-scale));
     }
 
     .crew__caption {
-        position: relative;
-        top: auto;
-        left: 0;
-        width: 100%;
-        margin-top: -10cqw;
-        transform: none;
+        top: calc((var(--caption-top) + 1cqw) * var(--stage-scale));
     }
 
-    .crew__name,
+    .crew__name {
+        font-size: calc(2.4cqw * var(--stage-scale));
+    }
+
     .crew__member--anandhu .crew__name {
-        font-size: clamp(1.55rem, 6.5cqw, 2.5rem);
+        font-size: calc(2.8cqw * var(--stage-scale));
+    }
+
+    /* Arrows + progress line: mobile only. */
+    .crew__nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0.25rem auto 0;
+        padding-inline: 6%;
+    }
+
+    .crew__arrow {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0;
+        border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+        border-radius: 50%;
+        background: transparent;
+        color: var(--color-accent);
+        cursor: pointer;
+        transition:
+            opacity 200ms ease,
+            background 200ms ease,
+            color 200ms ease;
+    }
+
+    .crew__arrow svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .crew__arrow:active:not(:disabled) {
+        background: var(--color-accent);
+        color: var(--color-background);
+    }
+
+    .crew__arrow:focus-visible {
+        outline: 2px solid var(--color-text-secondary);
+        outline-offset: 3px;
+    }
+
+    .crew__arrow:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+
+    .crew__progress {
+        position: relative;
+        width: min(9rem, 40%);
+        height: 1px;
+        overflow: hidden;
+        background: color-mix(in srgb, var(--color-text-secondary) 25%, transparent);
+    }
+
+    .crew__progress-bar {
+        position: absolute;
+        inset-block: -0.5px;
+        left: 0;
+        width: calc(var(--crew-thumb, 0.4) * 100%);
+        background: var(--color-accent);
+        transform: translateX(calc(var(--crew-offset, 0) * 1%));
     }
 
     .crew__role,
     .crew__instagram {
-        font-size: clamp(0.65rem, 2.5cqw, 0.85rem);
+        font-size: max(calc(0.94cqw * var(--stage-scale)), 0.62rem);
+        letter-spacing: 0.04em;
     }
 
     .crew__instagram {
-        min-height: 2.75rem;
+        min-height: 2.25rem;
     }
 
     .crew__member.is-profile-open {
@@ -2861,20 +2943,8 @@ body {
     }
 
     .crew__designation {
-        font-size: 0.625rem;
+        font-size: max(calc(0.8cqw * var(--stage-scale)), 0.6rem);
         letter-spacing: 0.06em;
-    }
-
-    .crew__member--anandhu {
-        order: -1;
-        grid-column: 1 / -1;
-        justify-self: center;
-        width: 60%;
-        margin-block: -0.5rem 0.25rem;
-    }
-
-    .crew__member--anandhu .crew__caption {
-        margin-top: -14cqw;
     }
 
     .contact__divider {

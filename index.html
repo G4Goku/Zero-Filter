@@ -670,7 +670,7 @@
               <path d="M-20 264C68 307 127 172 237 202S367 240 456 181S601 181 689 233S866 304 978 205" />
             </svg>
 
-            <ul class="crew__members" aria-label="The Zero Filter Stories team">
+            <ul class="crew__members" id="crew-members" aria-label="The Zero Filter Stories team">
               <li class="crew__member crew__member--meenakshi" data-designation="Connection curator">
                 <img class="crew__portrait" src="./assets/utilityImages/meenakshi.webp" alt="Meenakshi" width="1917" height="2383" loading="lazy" decoding="async" />
                 <div class="crew__caption">
@@ -722,6 +722,20 @@
                 </div>
               </li>
             </ul>
+
+            <div class="crew__nav">
+              <button class="crew__arrow crew__arrow--prev" type="button" aria-label="Scroll crew left" aria-controls="crew-members">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="crew__progress" aria-hidden="true"><span class="crew__progress-bar"></span></div>
+              <button class="crew__arrow crew__arrow--next" type="button" aria-label="Scroll crew right" aria-controls="crew-members">
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                  <path d="m6 3 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           <svg class="contact__divider" viewBox="0 0 958 100" fill="none" preserveAspectRatio="none" aria-hidden="true" focusable="false">

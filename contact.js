@@ -354,3 +354,54 @@ document.addEventListener("keydown", (event) => {
 });
 
 crewHoverPreference.addEventListener("change", closeCrewProfile);
+
+// Mobile crew scroller: arrows, progress line, and opening on the founder.
+const crewList = contactSection?.querySelector(".crew__members");
+const crewNav = contactSection?.querySelector(".crew__nav");
+const crewMobile = window.matchMedia("(max-width: 640px)");
+
+if (crewList && crewNav) {
+  const prevArrow = crewNav.querySelector(".crew__arrow--prev");
+  const nextArrow = crewNav.querySelector(".crew__arrow--next");
+  const progress = crewNav.querySelector(".crew__progress");
+  let crewNavFrame = 0;
+
+  const updateCrewNav = () => {
+    crewNavFrame = 0;
+    const max = crewList.scrollWidth - crewList.clientWidth;
+    const thumb = max > 0 ? crewList.clientWidth / crewList.scrollWidth : 1;
+    const ratio = max > 0 ? crewList.scrollLeft / max : 0;
+    progress.style.setProperty("--crew-thumb", thumb.toFixed(4));
+    progress.style.setProperty("--crew-offset", (ratio * (1 / thumb - 1) * 100).toFixed(2));
+    prevArrow.disabled = crewList.scrollLeft <= 4;
+    nextArrow.disabled = crewList.scrollLeft >= max - 4;
+  };
+
+  const queueCrewNav = () => {
+    if (!crewNavFrame) crewNavFrame = window.requestAnimationFrame(updateCrewNav);
+  };
+
+  const centerOnFounder = () => {
+    if (!crewMobile.matches) return;
+    const founder = crewList.querySelector(".crew__member--anandhu");
+    if (founder) {
+      crewList.scrollLeft =
+        founder.offsetLeft + founder.offsetWidth / 2 - crewList.clientWidth / 2;
+    }
+    updateCrewNav();
+  };
+
+  const scrollCrew = (direction) => {
+    crewList.scrollBy({
+      left: direction * crewList.clientWidth * 0.6,
+      behavior: contactMotionPreference.matches ? "auto" : "smooth",
+    });
+  };
+
+  prevArrow.addEventListener("click", () => scrollCrew(-1));
+  nextArrow.addEventListener("click", () => scrollCrew(1));
+  crewList.addEventListener("scroll", queueCrewNav, { passive: true });
+  window.addEventListener("resize", queueCrewNav);
+  crewMobile.addEventListener("change", centerOnFounder);
+  centerOnFounder();
+}
