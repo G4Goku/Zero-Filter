@@ -3036,7 +3036,7 @@ body {
 
 @media (max-width: 640px) {
     .contact {
-        padding-top: 2.5rem;
+        padding-top: 1.75rem;
     }
 
     .crew {
@@ -3078,8 +3078,13 @@ body {
         --stage-scale: 2.5;
         position: relative;
         inset: auto;
-        height: calc(37cqw * var(--stage-scale));
-        margin-top: 0.5rem;
+        /* Hug the content: the lowest caption (Vivek) ends ~33cqw down the
+           stage, plus room for its Instagram link. */
+        height: calc(33cqw * var(--stage-scale) + 2.75rem);
+        /* The portraits carry ~12% transparent headroom; pull the stage up so
+           the founder's head sits just under the title (as on desktop, the
+           people may overlap the title, which stays behind them). */
+        margin-top: -7cqw;
         overflow-x: auto;
         overflow-y: hidden;
         overscroll-behavior-x: contain;
