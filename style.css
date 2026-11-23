@@ -535,6 +535,90 @@ body {
         transition-delay: 0ms;
         transition-duration: 150ms;
     }
+
+    /* --- Premium layer ------------------------------------------------ */
+
+    /* Focus pull: photos arrive soft and settle into sharp focus. */
+    .scroll-motion-ready [data-motion="photo"] {
+        filter: blur(0);
+        transition:
+            opacity 700ms var(--motion-ease) var(--motion-delay, 0ms),
+            translate 900ms var(--motion-ease) var(--motion-delay, 0ms),
+            scale 1100ms var(--motion-ease) var(--motion-delay, 0ms),
+            filter 1200ms var(--motion-ease) var(--motion-delay, 0ms),
+            box-shadow 500ms var(--motion-ease),
+            transform 450ms var(--motion-ease);
+    }
+
+    .scroll-motion-ready [data-motion="photo"]:not(.is-revealed) {
+        filter: blur(10px);
+    }
+
+    /* Mask rise: titles lift up through an invisible baseline. */
+    .scroll-motion-ready [data-motion="mask"] {
+        clip-path: inset(-30% -6% -30% -6%);
+        translate: 0 0;
+        transition:
+            clip-path 1100ms var(--motion-ease),
+            translate 1100ms var(--motion-ease);
+    }
+
+    .scroll-motion-ready [data-motion="mask"]:not(.is-revealed) {
+        clip-path: inset(100% -6% -30% -6%);
+        translate: 0 0.45em;
+    }
+
+    /* Media settle: the frame opens slightly while the image eases out of a
+       gentle zoom — a slow, cinematic arrival. */
+    .scroll-motion-ready [data-motion="media"] {
+        clip-path: inset(0);
+        transition: clip-path 1400ms var(--motion-ease);
+    }
+
+    .scroll-motion-ready [data-motion="media"]::before {
+        scale: 1;
+        transition: scale 1800ms var(--motion-ease);
+    }
+
+    .scroll-motion-ready [data-motion="media"]:not(.is-revealed) {
+        clip-path: inset(5% 4%);
+    }
+
+    .scroll-motion-ready [data-motion="media"]:not(.is-revealed)::before {
+        scale: 1.12;
+    }
+}
+
+/* Reading-progress hairline in the brand gold, driven by the scroll itself
+   (no JS). Browsers without scroll timelines simply don't show it. */
+@supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+        body::before {
+            position: fixed;
+            z-index: 1000;
+            inset: 0 0 auto;
+            height: 2px;
+            background: linear-gradient(90deg,
+                    rgb(214 183 122 / 0%),
+                    var(--color-accent) 35%,
+                    var(--color-accent));
+            transform-origin: left center;
+            pointer-events: none;
+            content: "";
+            animation: scroll-progress linear both;
+            animation-timeline: scroll(root block);
+        }
+    }
+}
+
+@keyframes scroll-progress {
+    from {
+        scale: 0 1;
+    }
+
+    to {
+        scale: 1 1;
+    }
 }
 
 @media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
