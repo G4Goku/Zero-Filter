@@ -1037,8 +1037,43 @@ body {
         margin: 0 auto;
     }
 
+    /* Framed-print look: a cream mat ring plus a soft, low shadow. */
     .featured-stories__photo {
-        box-shadow: 0 4px 14px rgb(40 25 23 / 7%);
+        box-shadow:
+            0 0 0 3px rgb(250 245 236 / 92%),
+            0 10px 24px -6px rgb(40 25 23 / 22%);
+    }
+
+    .featured-stories__photo:hover {
+        box-shadow:
+            0 0 0 3px rgb(250 245 236 / 100%),
+            0 14px 30px -6px rgb(40 25 23 / 28%);
+    }
+
+    /* The lead story gets a second, airy halo. */
+    .featured-stories__photo--three {
+        z-index: 2;
+        box-shadow:
+            0 0 0 4px rgb(250 245 236 / 95%),
+            0 0 0 11px rgb(250 245 236 / 32%),
+            0 18px 40px -8px rgb(40 25 23 / 30%);
+    }
+
+    .featured-stories__photo--all {
+        box-shadow:
+            0 0 0 3px rgb(250 245 236 / 92%),
+            0 0 0 8px rgb(40 25 23 / 8%),
+            0 10px 24px -6px rgb(40 25 23 / 30%);
+    }
+
+    .featured-stories__title::after {
+        display: block;
+        width: 2.5rem;
+        height: 1px;
+        margin: 0.7rem auto 0;
+        background: linear-gradient(90deg, transparent, currentColor, transparent);
+        opacity: 0.55;
+        content: "";
     }
 
     .featured-stories__photo--one {
@@ -1093,6 +1128,90 @@ body {
         --story-photo-size: clamp(3.5rem, 17%, 6rem);
         top: 82%;
         left: 85%;
+    }
+}
+
+/* Phones: a taller 4:5 canvas so the collage reads as a composed orbit around
+   the lead story instead of small scattered dots. Sizes are % of canvas
+   width; spacing is planned so no two frames touch. */
+@media (max-width: 640px) {
+    .featured-stories {
+        padding: 3.25rem 1.25rem 3.5rem;
+    }
+
+    .featured-stories__heading {
+        margin-bottom: 1.75rem;
+    }
+
+    .featured-stories__title {
+        font-size: 0.95rem;
+        letter-spacing: 0.32em;
+        /* Optical centring: letter-spacing adds trailing space. */
+        padding-left: 0.32em;
+    }
+
+    .featured-stories__canvas {
+        max-width: 24rem;
+        aspect-ratio: 4 / 5;
+    }
+
+    .featured-stories__photo--one {
+        --story-photo-size: 22%;
+        top: 12.8%;
+        left: 20%;
+    }
+
+    .featured-stories__photo--six {
+        --story-photo-size: 20%;
+        top: 10.4%;
+        left: 79%;
+    }
+
+    .featured-stories__photo--three {
+        --story-photo-size: 44%;
+        top: 41.6%;
+        left: 50%;
+    }
+
+    .featured-stories__photo--two {
+        --story-photo-size: 22%;
+        top: 44.8%;
+        left: 12.5%;
+    }
+
+    .featured-stories__photo--five {
+        --story-photo-size: 22%;
+        top: 35.2%;
+        left: 87%;
+    }
+
+    .featured-stories__photo--four {
+        --story-photo-size: 26%;
+        top: 63.2%;
+        left: 79%;
+    }
+
+    .featured-stories__photo--seven {
+        --story-photo-size: 26%;
+        top: 75.2%;
+        left: 24%;
+    }
+
+    .featured-stories__photo--eight {
+        --story-photo-size: 22%;
+        top: 84.8%;
+        left: 52%;
+    }
+
+    .featured-stories__photo--nine {
+        --story-photo-size: 22%;
+        top: 86.4%;
+        left: 82%;
+    }
+
+    .featured-stories__all-title {
+        font-size: 20cqw;
+        letter-spacing: 0.04em;
     }
 }
 
@@ -1316,6 +1435,19 @@ body {
 }
 
 @media (min-width: 641px) and (max-width: 900px) {
+    .why-choose-us__art {
+        right: 0;
+        left: auto;
+        width: auto;
+        height: 100%;
+        aspect-ratio: 687 / 560;
+        translate: calc(18.6% - 4rem) 0;
+    }
+
+    .why-choose-us__art g {
+        stroke-width: 0.85;
+    }
+
     .why-choose-us__inner {
         grid-template-columns: minmax(0, 1fr);
         gap: 2rem;
@@ -1711,8 +1843,55 @@ body {
 
     .why-choose-us__art {
         top: 0;
-        width: 100%;
+        right: 0;
+        left: auto;
+        width: auto;
         height: 100%;
+        aspect-ratio: 687 / 560;
+        /* Keep the art's true proportions ("cover" by height) and park the
+           circular node ~3rem inside the right edge. */
+        translate: calc(18.6% - 3rem) 0;
+    }
+
+    /* The art is drawn ~1.8x larger here; thin the strokes back to hairlines
+       (CSS beats the SVG attribute, and pathLength draw-in stays intact). */
+    .why-choose-us__art g {
+        stroke-width: 0.6;
+    }
+
+    .why-choose-us__item {
+        counter-increment: why-item;
+        position: relative;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgb(255 250 241 / 10%);
+    }
+
+    .why-choose-us__item::before {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: rgb(255 250 241 / 45%);
+        font-family: var(--font-poppins);
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.24em;
+        content: "0" counter(why-item);
+    }
+
+    .why-choose-us__list {
+        counter-reset: why-item;
+    }
+
+    .why-choose-us__title {
+        font-size: clamp(1.4rem, 7vw, 1.9rem);
+        letter-spacing: 0.06em;
+    }
+
+    .why-choose-us__item-title {
+        letter-spacing: 0.08em;
+    }
+
+    .why-choose-us__item-copy {
+        line-height: 1.75;
     }
 
     .why-choose-us__inner {
