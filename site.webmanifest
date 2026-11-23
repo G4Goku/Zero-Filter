@@ -1,6 +1,8 @@
 {
   "name": "Zero Filter Stories",
   "short_name": "Zero Filter",
+  "description": "Candid wedding photography, cinematic wedding films, pre-wedding, brand and model shoots in Kochi, Ernakulam and across Kerala.",
+  "lang": "en-IN",
   "start_url": "/",
   "scope": "/",
   "icons": [
@@ -17,7 +19,7 @@
       "purpose": "any"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#281917",
+  "background_color": "#281917",
   "display": "standalone"
 }

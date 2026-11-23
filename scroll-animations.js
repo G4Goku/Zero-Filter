@@ -6,13 +6,14 @@
   );
   const revealGroups = [
     [".about__intro, .about__vision, .about__approach", "rise", 70],
-    [".why-choose-us__heading", "rise", 0],
+    // Section titles rise out of a mask, like a line of type being set.
+    [".about__title, .why-choose-us__title, .featured-stories__title, .terms-and-conditions__title", "mask", 0],
     [".why-choose-us__item", "rise", 60],
     [".why-choose-us__art, .featured-stories__arch", "draw", 0],
-    [".featured-stories__heading", "rise", 0],
+    // Photos "pull focus" from soft to sharp, like a lens finding its subject.
     [".featured-stories__photo", "photo", 60],
     [".terms-and-conditions__banner", "media", 0],
-    [".terms-and-conditions__eyebrow, .terms-and-conditions__title", "rise", 80],
+    [".terms-and-conditions__eyebrow", "rise", 80],
     [".terms-and-conditions__rule", "line", 0],
     [".terms-and-conditions__item", "rise", 45],
     [".site-footer__brand, .site-footer__link", "rise", 35],
